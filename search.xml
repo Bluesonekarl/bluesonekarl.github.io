@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/2017/09/17/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<p><excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[yelee主题使用说明]]></title>
+      <url>/2017/09/17/yelee%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
+      <content type="html"><![CDATA[<h5 id="yelee主题使用说明"><a href="#yelee主题使用说明" class="headerlink" title="yelee主题使用说明"></a>yelee主题使用说明</h5><p><a href="http://moxfive.coding.me/yelee/" target="_blank" rel="external">URL</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[VMware中虚拟机复制后网卡无法正常上网]]></title>
+      <url>/2017/09/17/VMware%E4%B8%AD%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A4%8D%E5%88%B6%E5%90%8E%E7%BD%91%E5%8D%A1%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E4%B8%8A%E7%BD%91/</url>
+      <content type="html"><![CDATA[<h4 id="故障现象"><a href="#故障现象" class="headerlink" title="故障现象"></a>故障现象</h4><ul>
+<li><p>虚拟机复制后出现eth1 ，而eth0 无法使用</p>
+<a id="more"></a>
+<h5 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h5><p>1.查看现在MAC地址并记录</p>
+<pre><code>ifconfig -a | grep HW 
+得到：HWADDR=&quot;00:50:56:9C:00:3A&quot;
+</code></pre><p>2.编辑Centos虚拟机克隆机的ifcfg-eth0的配置文件的HWADDR为（ifconfig -a | grep HW）得到 的MAC地址 </p>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-eth0
+</code></pre><p>3.接着进行如下操作 ，删除一个文件。</p>
+<pre><code>rm -rf /etc/udev/rules.d/70-persistent-net.rules 
+</code></pre><p>4.重启系统  reboot</p>
+</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CentOS 忘记root密码的解决办法]]></title>
+      <url>/2017/09/17/CentOS-%E5%BF%98%E8%AE%B0root%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-1/</url>
+      <content type="html"><![CDATA[<h3 id="方法-步骤"><a href="#方法-步骤" class="headerlink" title="方法/步骤"></a>方法/步骤</h3><ul>
+<li>1.在开机启动的时候按键盘上的“E”键会进入如下界面。<br><img src="/img/passwd/1.jpg" alt=""></li>
+<li>2.选择相应的内核，再次按“E”，出现下图，选择第二项，再次按“E”键<br><img src="/img/passwd/2.jpg" alt=""></li>
+<li>3.经过第二步，这个画面可以编辑，在信息的最后加“空格”，然后键入“single”（如图），或者直接输入数字的“1”并回车确定进入下一步。图如下：<br><img src="/img/passwd/3.jpg" alt=""></li>
+<li>4.操作完第三步，会出现下图，是不是感觉又回到第二步了呢？并不是，这里按键盘的”B”键，进入引导系统。注意，这儿是“B”键<br><img src="/img/passwd/4.jpg" alt=""></li>
+<li>5.在下面这个画面中的“#”后输入“passwd root”，重新设置root的密码，密码输入一遍，确认输入一遍，共2遍<br><img src="/img/passwd/5.jpg" alt=""> </li>
+<li>6.重置密码成功会有一个修改成功的提示，然后输入reboot重启系统，root密码重置就完成了。</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+  
+  
+</search>
